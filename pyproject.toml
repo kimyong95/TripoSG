@@ -9,6 +9,5 @@ description = "TripoSG package"
 readme = "README.md"
 requires-python = ">=3.7"
 
-[tool.setuptools]
-packages = ["triposg"]
-include-package-data = true
+[tool.setuptools.packages.find]
+include = ["triposg", "triposg.*"]
