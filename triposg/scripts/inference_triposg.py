@@ -14,7 +14,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from triposg.pipelines.pipeline_triposg import TripoSGPipeline
 from image_process import prepare_image
-from briarmbg import BriaRMBG
+from TripoSG.triposg.scripts.briarmbg import BriaRMBG
 
 import pymeshlab
 
