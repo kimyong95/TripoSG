@@ -11,4 +11,6 @@ requires-python = ">=3.7"
 
 [tool.setuptools]
 package-dir = { "triposg" = "triposg", "triposg.scripts" = "scripts" }
-packages = ["triposg", "triposg.pipelines", "triposg.scripts"]
+
+[tool.setuptools.packages.find]
+include = ["triposg", "triposg.scripts"]
