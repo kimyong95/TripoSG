@@ -306,12 +306,12 @@ class TripoSGPipeline(DiffusionPipeline, TransformerDiffusionMixin):
             )
         else:
             self.vae.set_flash_decoder()
-            output = flash_extract_geometry(
-                latents,
+            output = [flash_extract_geometry(
+                l.unsqueeze(0),
                 self.vae,
                 bounds=bounds,
                 octree_depth=flash_octree_depth,
-            )
+            )[0] for l in latents]
         meshes = [trimesh.Trimesh(mesh_v_f[0].astype(np.float32), mesh_v_f[1]) for mesh_v_f in output]
         
         # Offload all models
